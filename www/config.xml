@@ -10,14 +10,14 @@
     <name>Onsen UI Demo1</name>
 
     <description>
-        An example for phonegap build & Onsen UI
+        An example for phonegap build and Onsen UI
     </description>
 
     <author href="https://build.phonegap.com" email="willy_chch@hotmail.com">
         Willy Yu
     </author>
 
-    <gap:platform name="ios" />
+    <!-- <gap:platform name="ios" /> -->
     <gap:platform name="android" />
     <gap:platform name="winphone" />
 
