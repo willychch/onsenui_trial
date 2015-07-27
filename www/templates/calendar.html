@@ -1,0 +1,46 @@
+<ons-page ng-controller="CalendarCtrl">
+
+    <ons-toolbar>
+        <div class="left">
+            <ons-toolbar-button ng-click="menu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <div class="center">calendar</div>
+    </ons-toolbar>
+	
+	<ons-list>
+		<ons-list-item>now = {{now}}</ons-list-item>
+		<ons-list-item>today = {{today}}</ons-list-item>
+		<ons-list-item>todayLong = {{todayLong}}</ons-list-item>
+		<ons-list-item>timeZoneOffset = {{timeZoneOffset}}</ons-list-item>
+		<ons-list-item>startDate = {{startDate}}</ons-list-item>
+		<ons-list-item>endDate = {{endDate}}</ons-list-item>
+	</ons-list>
+	<ons-row style="margin-top: 100px; text-align: center;">
+        <ons-col>
+			<span ng-hide="isCalendar"> cannot get calendar, please run in a device</span>
+			<div ng-show="isCalendar">
+				<p><a class="button" ng-click="findCalendar()">findCalendar</a>
+				<p><a class="button" ng-click="findEvents()">findEvent</a>
+				<p><a class="button" ng-click="listAllEvents()">listEventsInRange</a>
+				<p><a class="button" ng-click="listInstancesInRange()">listInstancesInRange</a>
+				<p><a class="button" ng-click="open()">Open Calendar</a>
+				<p><a class="button" ng-click="listCalendar()">list all Calendars</a>
+			</div>
+		</ons-col>
+	</ons-row>
+	<ons-list>
+		<ons-list-item ng-repeat="item in eventList">
+			calendar_id = {{item.calendar_id}}<br>
+			event_id = {{item.event_id}}<br>
+			title = {{item.title}}<br>
+			allDay = {{item.allDay}}<br>
+			begin = {{item.begin}}<br>
+			startDay = {{item.startDay}}<br>
+			startMinute = {{item.startMinute}}<br>
+			end = {{item.end}}<br>
+		</ons-list-item>
+	</ons-list>
+
+</ons-page>
